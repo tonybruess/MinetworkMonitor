@@ -39,16 +39,16 @@ task :update_stathat_data => :environment do
 
     servers.each do |server|
         stats << Thread.new(server) do |s|
-            if s.stathat_short_id == nil
+            if s.stathat_id == nil
                 response = JSON.parse(open(stathat + s.stathat_token + "/stat?name=" + s.id).read)
-                s.stathat_short_id = response["id"]
-                p "Set ID for " + s.name + " to " + s.stathat_short_id
+                s.stathat_id = response["id"]
+                p "Set ID for " + s.name + " to " + s.stathat_id
             end
 
-            response = JSON.parse(open(stathat + s.stathat_token + "/data/" + s.stathat_short_id + "?t=1w3h").read)
+            response = JSON.parse(open(stathat + s.stathat_token + "/data/" + s.stathat_id + "?t=1d15m").read)
             s.stathat_data = response[0]["points"]
 
-            p "Fetched data for " + s.name + " (" + s.stathat_data.length + ")"
+            p "Fetched data for " + s.name + " (" + s.stathat_data.length.to_s + ")"
 
             s.save
         end
