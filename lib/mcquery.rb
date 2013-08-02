@@ -13,15 +13,17 @@ class MCQuery
     private
     def doPing
         begin
+            repl = ""
+
             timeout(1.5) do
                 s = TCPSocket.open(@hostname, @port)
 
                 s.puts "\xFE\x01"
-                @repl = s.gets
+                repl = s.gets
                 s.close
             end
 
-            qstring = @repl[3, @repl.length].force_encoding("utf-16be").encode("utf-8")
+            qstring = repl[3, repl.length].force_encoding("utf-16be").encode("utf-8")
             qarray = qstring.split("\0")
             qdict = {}
 
