@@ -6,9 +6,13 @@
         %link{:href => "/assets/application.css", :rel => "stylesheet"}
         %script{:src => "/assets/application.js"}
     %body
-        .container#header
-        = yield
-        %footer
+        #wrap
             .container
-                .pull-left
-                    &copy; Copyright 2013 MonsieurApple
+                .page-header
+                    %h1 Header
+                %p.lead Testing
+                = yield
+            #push
+        #footer
+            .container
+                %p.muted.credit Made with <3 by MonsieurApple

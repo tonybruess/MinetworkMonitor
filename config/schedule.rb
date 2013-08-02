@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-job_type :rake, "sleep :sleep && cd :path && RAILS_ENV=:environment bundle exec rake :task --silent >/dev/null 2>&1"
+job_type :rake, "sleep :sleep && cd :path && RAILS_ENV=:environment bundle exec spring rake :task --silent >/dev/null 2>&1"
 
 every 1.minute do
 	rake "update_stathat_data", :sleep => 0

@@ -115,6 +115,7 @@ GEM
     redis (3.0.4)
     rvm-capistrano (1.4.1)
       capistrano (>= 2.0.0)
+    spring (0.0.10)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -169,6 +170,7 @@ DEPENDENCIES
   rails
   redis
   rvm-capistrano
+  spring
   stathat
   therubyracer (= 0.10.2)
   thin
