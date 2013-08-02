@@ -7,12 +7,12 @@ set :rvm_type, :user
 set :rvm_path, "$HOME/.rvm"
 set :rvm_bin_path, "$HOME/.rvm/bin"
 
-set :application, "minetworkmonitor"
-set :repository, "git@github.com:mrapple/MinetworkMonitor.org.git"
+set :application, "minetwork"
+set :repository, "git@github.com:mrapple/MinetworkMonitor.git"
 
 set :scm, :git
 set :branch, 'master'
-set :deploy_to, "/home/deploy/apps/minetwormonitor"
+set :deploy_to, "/home/deploy/apps/minetwork"
 set :user, 'deploy'
 set :port, 50210
 

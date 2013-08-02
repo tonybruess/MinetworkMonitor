@@ -154,7 +154,7 @@ DEPENDENCIES
   bundler
   capistrano
   capistrano-unicorn
-  haml (= 3.1.8)
+  haml
   jquery-rails
   jquery-ui-rails
   json
