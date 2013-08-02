@@ -13,19 +13,15 @@ test:
         - localhost:27017
 
 staging:
-  options:
-    identity_map_enabled: true
   sessions:
     default:
+      database: minetwork
       hosts:
         - localhost:27017
-      database: minetwork
 
 production:
-  options:
-    identity_map_enabled: true
   sessions:
     default:
+      database: minetwork
       hosts:
         - localhost:27017
-      database: minetwork
