@@ -1,11 +1,15 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 load "deploy/assets"
+require "whenever/capistrano"
 
-set :rvm_ruby_string, "ruby-1.9.3-p194"
+set :rvm_ruby_string, "ruby-2.0.0-p195"
 set :rvm_type, :user
 set :rvm_path, "$HOME/.rvm"
 set :rvm_bin_path, "$HOME/.rvm/bin"
+
+set :whenever_command, "bundle exec whenever"
+set :whenever_roles, [:db]
 
 set :application, "minetwork"
 set :repository, "git@github.com:mrapple/MinetworkMonitor.git"
