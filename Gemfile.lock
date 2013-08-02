@@ -49,6 +49,7 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-unicorn (0.1.10)
       capistrano
+    chronic (0.9.1)
     commonjs (0.2.6)
     daemons (1.1.9)
     erubis (2.7.0)
@@ -111,6 +112,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.11.0)
     rake (10.1.0)
+    redis (3.0.4)
     rvm-capistrano (1.4.1)
       capistrano (>= 2.0.0)
     sprockets (2.10.0)
@@ -144,6 +146,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    whenever (0.8.4)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -162,9 +167,11 @@ DEPENDENCIES
   mongo
   mongoid!
   rails
+  redis
   rvm-capistrano
   stathat
   therubyracer (= 0.10.2)
   thin
   uglifier
   unicorn
+  whenever
