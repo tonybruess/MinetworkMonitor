@@ -11,4 +11,5 @@ class Server
     field :stathat_ukey # get code -> ukey
     field :stathat_data, :type => Array, :default => Array.new
 
+    field :last_check, :type => Hash, :default => Hash.new
 end

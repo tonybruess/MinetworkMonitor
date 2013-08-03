@@ -14,6 +14,9 @@ task :query_servers => :environment do
             p "Got result for " + s.name
             p result
 
+            s.last_check = {:protocol_version => result.protocol_version, :server_version => result.server_version, :motd => result.motd, :players_online => result.players_online, :players_max => result.players_max}
+            s.save
+
             stats << Thread.new(result) do |r|
                 timeout(3) do
                     p "Posting data for " + s.name
