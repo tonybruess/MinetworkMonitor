@@ -2,7 +2,7 @@ require 'socket'
 require 'timeout'
 
 class MCQuery
-    attr_reader :protocol_version, :server_version, :motd, :players_online, :players_max
+    attr_reader :protocol_version, :server_version, :motd, :players_online, :players_max, :online
 
     def initialize(hostname, port)
         @hostname = hostname
@@ -32,9 +32,11 @@ class MCQuery
             @motd = qarray[3]
             @players_online = qarray[4]
             @players_max = qarray[5]
+            @online = true
         rescue Exception
             @protocol_version = @server_version = @players_online = @players_max = 0
             @motd = ""
+            @online = false
         end
     end
 end
