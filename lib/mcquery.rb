@@ -15,7 +15,7 @@ class MCQuery
         begin
             repl = ""
 
-            timeout(3) do
+            timeout(5) do
                 s = TCPSocket.open(@hostname, @port)
 
                 s.puts "\xFE\x01"
