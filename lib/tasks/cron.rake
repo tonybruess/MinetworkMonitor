@@ -48,12 +48,14 @@ task :update_stathat_data => :environment do
                 p "Set ID for " + s.name + " to " + s.stathat_id
             end
 
-            response = JSON.parse(open(stathat + s.stathat_token + "/data/" + s.stathat_id + "?t=1d15m").read)
-            s.stathat_data = response[0]["points"]
-
-            p "Fetched data for " + s.name + " (" + s.stathat_data.length.to_s + ")"
-
-            s.save
+            if response
+                response = JSON.parse(open(stathat + s.stathat_token + "/data/" + s.stathat_id + "?t=1d15m").read)
+                s.stathat_data = response[0]["points"]
+                p "Fetched data for " + s.name + " (" + s.stathat_data.length.to_s + ")"
+                s.save
+            else
+                p "Error: No response recieved!"
+            end
         end
     end
 
