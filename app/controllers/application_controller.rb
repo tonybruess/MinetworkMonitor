@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 		result = Array.new
 
 		servers.each do |s|
-			result << {:name => s.name, :ip => s.ip, :players_online => s.last_check["players_online"].to_i, :motd => s.last_check["motd"].to_s}
+			result << {:name => s.name, :ip => s.ip, :players_online => s.last_check["players_online"].to_i}
 		end
 
 		return render :json => result
