@@ -75,7 +75,7 @@ GEM
       less (~> 2.3.1)
     less-rails-bootstrap (2.3.3)
       less-rails (~> 2.3.1)
-    libv8 (3.3.10.4)
+    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -113,6 +113,7 @@ GEM
     raindrops (0.11.0)
     rake (10.1.0)
     redis (3.0.4)
+    ref (1.0.5)
     rvm-capistrano (1.4.1)
       capistrano (>= 2.0.0)
     spring (0.0.10)
@@ -126,8 +127,9 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     stathat (0.1.7)
-    therubyracer (0.10.2)
-      libv8 (~> 3.3.10)
+    therubyracer (0.12.0)
+      libv8 (~> 3.16.14.0)
+      ref
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -172,7 +174,7 @@ DEPENDENCIES
   rvm-capistrano
   spring
   stathat
-  therubyracer (= 0.10.2)
+  therubyracer (= 0.12.0)
   thin
   uglifier
   unicorn
